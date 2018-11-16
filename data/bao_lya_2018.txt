@@ -1,0 +1,30 @@
+# z, quantity, sigma, type (D_V/rs=3, Dv/Mpc=4, DA/rs=5, c/Hrs=6, rs/D_v=7, D_M/rs=8)
+# For a given type, the quantity correspond to the listed
+# possibilities above
+
+#DR12
+# BOSS DR12 LyaLya (D_M/rs)
+#2.33   37.8    2.1     8
+
+# BOSS DR12 LyaLya c/(H rs)
+#2.33    9.07     0.31     6
+
+# BOSS DR12 LyaQSO (D_M/rs)
+#2.40   35.7    1.7     8
+
+# BOSS DR12 LyaQSO c/(H rs)
+#2.40    9.01     0.36     6
+
+
+#DR11
+# BOSS DR11 LyaLya (D_A/rs)
+2.34   11.28    0.65     5
+
+# BOSS DR11 LyaLya c/(H rs)
+2.34    9.17     0.28     6
+
+# BOSS DR11 LyaQSO (D_A/rs)
+2.36   10.8    0.4     5
+
+# BOSS DR11 LyaQSO c/(H rs)
+2.36    9.0     0.3     6
