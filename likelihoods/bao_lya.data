@@ -1,5 +1,0 @@
-# BAO data
-bao_lya.data_directory      = data.path['data']
-bao_lya.file                = 'bao_lya_2018.txt'
-bao_lya.rd_rescale          = 1.
-bao_lya.boss_rd_fid_in_Mpc  = 147.78
