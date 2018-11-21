@@ -1,0 +1,5 @@
+# BAO data
+bao_lya_gaussian.data_directory      = data.path['data']
+bao_lya_gaussian.file                = 'bao_lya_2018.txt'
+bao_lya_gaussian.rd_rescale          = 1.
+bao_lya_gaussian.boss_rd_fid_in_Mpc  = 147.78
