@@ -1,0 +1,19 @@
+ param names	:  H0            \Omega_{m }   
+ R-1 values	:  0.000942	 0.001438	
+ Best Fit  	:  7.211799e+01	 3.802552e-01	
+ mean      	:  7.129960e+01	 3.645249e-01	
+ sigma     	:  2.505944e+00	 nan	
+
+ 1-sigma - 	: -2.750112e+00	 nan	
+ 1-sigma + 	:  2.261775e+00	 nan	
+ 2-sigma - 	: -4.483312e+00	 nan	
+ 2-sigma + 	:  4.955199e+00	 nan	
+ 3-sigma - 	: -5.707296e+00	 nan	
+ 3-sigma + 	:  6.396306e+00	 nan	
+
+ 1-sigma > 	:  6.854949e+01	 nan	
+ 1-sigma < 	:  7.356138e+01	 nan	
+ 2-sigma > 	:  6.681629e+01	 nan	
+ 2-sigma < 	:  7.625480e+01	 nan	
+ 3-sigma > 	:  6.559231e+01	 nan	
+ 3-sigma < 	:  7.769591e+01	 nan	

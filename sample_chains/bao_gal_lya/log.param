@@ -1,0 +1,64 @@
+#-----CLASS v2.7.1 (branch: master, hash: 3dc78882860a23a4952c5e49d4b20bc51dd000d0)-----
+
+#------Experiments to test (separated with commas)-----
+# To see all the available ones, please look in the
+# montepython/likelihoods folder. Every folder there is a valid likelihood to
+# test.
+data.experiments=['bao_lya','bao_smallz_2014','bao_boss_dr12']
+
+#------ Parameter list -------
+# data.parameters[class name] = [mean, min, max, 1-sigma, scale, role]
+# - if min max irrelevant, put to -1 or None (if you want a boundary of -1, use -1.0)
+# - if fixed, put 1-sigma to 0
+# - if scale irrelevant, put to 1, otherwise to the appropriate factor
+# - role is either 'cosmo', 'nuisance' or 'derived'
+
+# Cosmological parameters list
+data.parameters['omega_cdm']      = [0.1120,  -1, -1,     0.0016,   1,  'cosmo']
+data.parameters['omega_b']        = [0.02249, -1, -1,   0.00016,  1,  'cosmo']
+data.parameters['H0']             = [67,      -1, -1,   1.0,      1,  'cosmo']
+
+# Nuisance parameter list, same call, except the name does not have to be a class name
+
+# Derived parameter list
+data.parameters['rs_d_h']        = [0, -1, -1, 0,1,  'derived']
+data.parameters['Omega_m']        = [0, -1, -1, 0,1, 'derived']
+data.parameters['Omega_Lambda']   = [0, -1, -1, 0,1, 'derived']
+
+#------ Mcmc parameters ----
+# Number of steps taken, by default (overwritten by the -N command)
+data.N=10
+# Number of accepted steps before writing to file the chain. Larger means less
+# access to disc, but this is not so much time consuming.
+data.write_step=5
+
+
+#-----Likelihood-bao_lya-----
+bao_lya.xcf_scan = 'BOSS_scans/BOSSDR11QSOLyaF.scan'
+bao_lya.data_directory = '/Users/jfarr/Programs/montepython/data'
+bao_lya.cf_scan = 'BOSS_scans/BOSSDR11LyaF_k.scan'
+bao_lya.rd_rescale = 1.0
+bao_lya.boss_c_over_Hrd_fid = 8.708
+bao_lya.file = 'BOSS_DR11_scan_aux.txt'
+bao_lya.boss_da_over_rd_fid = 11.59
+
+
+#-----Likelihood-bao_smallz_2014-----
+bao_smallz_2014.exclude = []
+bao_smallz_2014.file = 'bao_smallz_2014.txt'
+bao_smallz_2014.data_directory = '/Users/jfarr/Programs/montepython/data'
+
+
+#-----Likelihood-bao_boss_dr12-----
+bao_boss_dr12.data_file = 'COMBINEDDR12_BAO_consensus_dM_Hz/BAO_consensus_results_dM_Hz.txt'
+bao_boss_dr12.rd_fid_in_Mpc = 147.78
+bao_boss_dr12.cov_file = 'COMBINEDDR12_BAO_consensus_dM_Hz/BAO_consensus_covtot_dM_Hz.txt'
+bao_boss_dr12.data_directory = '/Users/jfarr/Programs/montepython/data'
+bao_boss_dr12.rs_rescale = 1.0
+
+
+#--------Default-Configuration------
+data.path['cosmo']	= '/Users/jfarr/Programs/class'
+data.path['root']	= '/Users/jfarr/Programs/montepython'
+data.path['data']	= '/Users/jfarr/Programs/montepython/data'
+data.path['MontePython']	= '/Users/jfarr/Programs/montepython/montepython'

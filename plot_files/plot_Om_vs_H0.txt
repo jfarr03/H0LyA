@@ -1,0 +1,15 @@
+#Choose to plot the relevant variables
+info.to_plot=['Omega_m','H0']
+
+#Change which colours we want. Order is order of plotting
+info.MP_color_cycle = [info.MP_color['Grey'], info.MP_color['Red'], info.MP_color['Blue']]
+
+#Define the limits of the plots
+info.force_limits = {'Omega_m':[0.038,0.662],'H0':[61.9,93.1]}
+
+#Define the fontsize
+info.fontsize = 12
+
+#Define the ticks
+info.ticknumber = 6
+info.ticksize = 8

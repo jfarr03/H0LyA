@@ -1,0 +1,20 @@
+#Redefine rs_d_h as H0 rd
+#info.redefine = {'rs_d_h': '100*rs_d_h'}
+info.to_change = {'rs_d_h': 'h r_{d}'}
+
+# Choose to plot the relevant variables
+#info.to_plot=['h r_{d}','Omega_m']
+info.to_plot=['h r_{d}','Omega_m']
+
+#Change which colours we want. Order is order of plotting
+info.MP_color_cycle = [info.MP_color['Grey'], info.MP_color['Red'], info.MP_color['Blue']]
+
+#Define the limits of the plots
+info.force_limits = {'Omega_m':[0.05,0.55],'h r_{d}':[70,170]}
+
+#Define the fontsize
+info.fontsize = 12
+
+#Define the ticks
+info.ticknumber = 5
+info.ticksize = 8
