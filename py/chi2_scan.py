@@ -1,9 +1,9 @@
 import numpy as np
-from scipy.interpolate import interp2d
+from scipy.interpolate import interp2d, RectBivariateSpline
 
-basedir = '/Users/jfarr/Projects/H0LyA/data/BOSS_scans/'
-scan_locations =   {'cf': basedir+'/BOSSDR11LyaF_k.scan',
-                    'xcf': basedir+'/BOSSDR11QSOLyaF.scan'
+basedir = '/Users/jfarr/Projects/H0LyA/'
+scan_locations =   {'cf': basedir+'/data/BOSS_scans/BOSSDR11LyaF_k.scan',
+                    'xcf': basedir+'/data/BOSS_scans/BOSSDR11QSOLyaF.scan'
                     }
 
 class chi2_interpolators():
@@ -12,7 +12,21 @@ class chi2_interpolators():
         interpolators = {}
         for corr_type in scan_locations:
             scan = np.loadtxt(scan_locations[corr_type])
-            interpolators[corr_type] = interp2d(scan[:,0],scan[:,1],scan[:,2],kind='linear')
+
+            x = sorted(set(data[:,0]))
+            y = sorted(set(data[:,1]))
+            grid = np.zeros((y.shape,x.shape))
+            #for each y value:
+            for i in range(y.shape):
+                #Filter the data to only those corresponding to the y value
+                scan_chunk = scan[:,:][scan[:,1]==y[i]]
+                #Ensure that they're sorted by x value
+                scan_chunk = scan_chunk[scan_chunk[:,0].argsort()]
+                #Add the chi2 column to the grid
+                grid[i,:] = scan_chunk[:,3]
+            interpolators[corr_type] = RectBivariateSpline(x,y,grid,kx=1,ky=1)
+
+            #interpolators[corr_type] = interp2d(scan[:,0],scan[:,1],scan[:,2],kind='linear')
         #Add the dictionary to the object.
         self.interpolators = interpolators
         self.DA_over_rd_fid = DA_over_rd_fid
