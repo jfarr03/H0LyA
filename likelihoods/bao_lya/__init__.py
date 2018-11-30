@@ -18,6 +18,12 @@ class bao_lya(Likelihood):
         self.z = np.array([], 'float64')
         self.types = []
 
+        scan_locations = {}
+        scan_locations['cf'] = self.data_directory + '/' + self.cf_scan
+        scan_locations['xcf'] = self.data_directory + '/' + self.xcf_scan
+
+        print(scan_locations)
+
         # read redshifts and data points
         for line in open(os.path.join(
                 self.data_directory, self.file), 'r'):
@@ -28,6 +34,9 @@ class bao_lya(Likelihood):
 
         # number of data points
         self.num_points = np.shape(self.z)[0]
+
+        #Make our interpolators
+        self.chi2_interpolators = chi2_scan.chi2_interpolators(scan_locations,self.boss_da_over_rd_fid,self.boss_c_over_Hrd_fid)
 
         # end of initialization
 
@@ -55,9 +64,7 @@ class bao_lya(Likelihood):
             if (self.types[i] == set([5,6])):
                 da_over_rd = da / rd
                 c_over_Hrd = (const.c / 1000.) / (H * rd)
-                chi2 += chi2_scan.get_chi2_distances(da_over_rd,c_over_Hrd,
-                    self.boss_da_over_rd_fid,self.boss_c_over_Hrd_fid,
-                    corr_type=self.corr_types[i])
+                chi2 += self.chi2_interpolators.get_chi2_distances(da_over_rd,c_over_Hrd,corr_type=self.corr_types[i])
             else:
                 raise io_mp.LikelihoodError(
                     "In likelihood %s. " % self.name +

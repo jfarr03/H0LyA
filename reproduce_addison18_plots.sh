@@ -4,8 +4,9 @@
 
 #Set the variables
 MONTEPYTHONPATH="/Users/jfarr/Programs/montepython/"
-N=100000
-OUTPUT="bao_chains_full"
+N=1000000
+OUTPUT="bao_chains_full_1000000"
+PLOTDIR="reproduced_addison18_plots_1000000"
 
 ################################################################################
 
@@ -32,7 +33,7 @@ python ${MONTEPYTHONPATH}/montepython/MontePython.py info ${OUTPUT}/bao_gal/ ${O
 python ${MONTEPYTHONPATH}/montepython/MontePython.py info ${OUTPUT}/bao_gal_omegab/ ${OUTPUT}/bao_lya_omegab/ ${OUTPUT}/bao_gal_lya_omegab/ --no-mean --extra plot_files/plot_Om_vs_H0.txt
 
 #Move the plots to a more clear location
-mkdir reproduced_addison18_plots
-cp ${OUTPUT}/bao_gal/plots/bao_gal-vs-bao_lya-vs-bao_gal_lya_triangle.pdf reproduced_addison17_plots/plot_3.pdf
-cp ${OUTPUT}/bao_gal_omegab/plots/bao_gal_omegab-vs-bao_lya_omegab-vs-bao_gal_lya_omegab_triangle.pdf reproduced_addison17_plots/plot_4.pdf
-open reproduced_addison17_plots/*.pdf
+mkdir ${PLOTDIR}
+cp ${OUTPUT}/bao_gal/plots/bao_gal-vs-bao_lya-vs-bao_gal_lya_triangle.pdf ${PLOTDIR}/plot_3.pdf
+cp ${OUTPUT}/bao_gal_omegab/plots/bao_gal_omegab-vs-bao_lya_omegab-vs-bao_gal_lya_omegab_triangle.pdf ${PLOTDIR}/plot_4.pdf
+open ${PLOTDIR}/*.pdf
