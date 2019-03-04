@@ -174,7 +174,8 @@ class chi2_interpolators():
                     max(y_grid)])
         plt.colorbar()
         if save:
-            plt.savefig('interpolated_scan_{}_{}_{}.pdf'.format(N_at,N_ap,mode))
+            plt.savefig('{}_interpolated_scan_{}_{}_{}.pdf'.format(corr_type,
+                                                                N_at,N_ap,mode))
         plt.show()
 
         return
