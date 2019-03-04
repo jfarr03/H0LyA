@@ -9,6 +9,7 @@ scan_locations =   {'cf': basedir+'/data/BOSS_scans/BOSSDR11LyaF_k.scan',
                     'xcf': basedir+'/data/BOSS_scans/BOSSDR11QSOLyaF.scan'
                     }
 
+
 #BOSS data Gaussian approximation. Could be put into a data file and stored
 #separately.
 BOSS_gauss = {}

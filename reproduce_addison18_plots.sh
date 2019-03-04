@@ -4,9 +4,9 @@
 
 #Set the variables
 MONTEPYTHONPATH="/Users/jfarr/Programs/montepython/"
-N=1000000
-OUTPUT="bao_chains_full_1000000"
-PLOTDIR="reproduced_addison18_plots_1000000"
+N=100000
+OUTPUT="bao_chains_full_${N}"
+PLOTDIR="reproduced_addison18_plots_${N}"
 
 ################################################################################
 
@@ -36,4 +36,7 @@ python ${MONTEPYTHONPATH}/montepython/MontePython.py info ${OUTPUT}/bao_gal_omeg
 mkdir ${PLOTDIR}
 cp ${OUTPUT}/bao_gal/plots/bao_gal-vs-bao_lya-vs-bao_gal_lya_triangle.pdf ${PLOTDIR}/plot_3.pdf
 cp ${OUTPUT}/bao_gal_omegab/plots/bao_gal_omegab-vs-bao_lya_omegab-vs-bao_gal_lya_omegab_triangle.pdf ${PLOTDIR}/plot_4.pdf
+
+#Deactivate python 2.7 and open the plots
+source deactivate py27
 open ${PLOTDIR}/*.pdf
