@@ -40,8 +40,7 @@ class bao_lya(Likelihood):
 
         # end of initialization
 
-    # compute likelihood
-
+    # compute log likelihood
     def loglkl(self, cosmo, data):
 
         chi2 = 0.
