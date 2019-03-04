@@ -12,6 +12,6 @@ Some simple commands are:
 
 To do:
  - Modify the plotting of `chi2_scan.py` to include covariance between the two distance measures when plotting the Gaussian approximation.
- - Explain the "wobbly edges" of the reproduced Addison et al. 2018 plots.
+ - Understand why the reproduction of plots from Addison et al. is not exact.
  - Add the likelihood to MontePython.
  
