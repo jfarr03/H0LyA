@@ -5,8 +5,8 @@
 #Set the variables
 MONTEPYTHONPATH="/Users/jfarr/Programs/montepython/"
 N=100000
-OUTPUT="bao_chains_full_${N}_RBS"
-PLOTDIR="reproduced_addison18_plots_${N}_RBS"
+OUTPUT="bao_chains_full_${N}"
+PLOTDIR="reproduced_addison18_plots_${N}"
 
 ################################################################################
 
